@@ -68,3 +68,66 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### Assignment Questions-Answers ###
+
+1. **Write down the steps you followed to install Node.js and npm?**
+   Download Node.js from the Official Website
+  Visit https://nodejs.org and download the LTS version (recommended for most users).
+  Install Node.js
+  Run the installer you downloaded.
+  Follow the installation wizard.
+  Make sure the checkbox to install npm is selected.
+  Click "Next" through the steps and finish the installation.
+  3.After installation, open your terminal or command prompt again and run:
+  node -v
+  npm -v
+
+2. **Explain what JSX is and why it's used in React development**
+   JSX (JavaScript XML) is a syntax extension for JavaScript that looks similar to HTML. It is used in React to describe what the UI should look like.
+  Why JSX is Used in React:
+  Makes code more readable and expressive.
+  Allows you to write HTML-like code directly in JavaScript.
+  Helps React developers visualize the component structure clearly.
+  Enables easy integration of JavaScript logic into UI (e.g., dynamic content, conditional rendering).
+
+3. **Provide examples of JSX code and explain how it translates to JavaScript.**
+ JSX allows us to write HTML elements in JavaScript and place them in the DOM without any createElement()  and/or appendChild() methods.
+  JSX converts HTML tags into react elements.
+   
+  Example
+  const myElement = <h1>I Love JSX!</h1>;const root = ReactDOM.createRoot(document.getElementById('root'));root.render(myElement);
+
+4. **Define state in React.js and explain its importance in building dynamic UIs.**
+ State of a component is an object that holds some information that may change over the lifetime of the component. The important point is whenever the state object changes, the component re-renders. It is always recommended to make our state as simple as possible and minimize the number of stateful components.
+Let's take an example of User component with message state. Here, useState hook has been used to add state to the User component and it returns an array with current state and function to update it.
+import { useState } from "react";
+ 
+function User() {
+  const [message, setMessage] = useState("Welcome to React world");
+ 
+  return (
+<div>
+<h1>{message}</h1>
+</div>
+  );
+}
+ 
+Why State Is Important
+Keeps track of dynamic data like user input, API responses, toggles, counters, etc.
+Controls rendering — when state changes, the UI updates automatically.
+Enables interactive, responsive interfaces.
+
+5. **Discuss scenarios where state management becomes crucial in React.js applications.**
+
+ **Form Handling**
+Managing input values, validation messages, and submission status.
+**User Authentication**
+Storing login state, user data, and redirecting based on access levels.
+**API Calls**
+Handling loading states, fetched data, and error messages dynamically.
+**UI Toggles**
+Expanding/collapsing menus, modals, dark mode toggles, etc.
+**Complex Applications**
+When multiple components share state, libraries like Redux, Context API, or Zustand help manage it efficiently.
+
